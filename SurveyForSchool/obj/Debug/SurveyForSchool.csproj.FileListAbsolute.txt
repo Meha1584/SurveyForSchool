@@ -1,0 +1,15 @@
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\bin\Debug\SurveyForSchool.exe.config
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\bin\Debug\SurveyForSchool.exe
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\bin\Debug\SurveyForSchool.pdb
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.AssemblyReference.cache
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\MainWindow.g.cs
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\App.g.cs
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool_MarkupCompile.cache
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool_MarkupCompile.lref
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\MainWindow.baml
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.g.resources
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.Properties.Resources.resources
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.GenerateResource.cache
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.CoreCompileInputs.cache
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.exe
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.pdb
