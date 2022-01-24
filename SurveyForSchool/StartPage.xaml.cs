@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace SurveyForSchool
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для StartPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StartPage : Page
     {
-        public MainWindow()
+        public StartPage()
         {
             InitializeComponent();
-            navigateFrame.Navigate(new StartPage());
         }
     }
 }

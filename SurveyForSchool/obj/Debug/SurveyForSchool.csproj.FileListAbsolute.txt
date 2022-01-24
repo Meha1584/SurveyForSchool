@@ -13,3 +13,5 @@ C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyFor
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.CoreCompileInputs.cache
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.exe
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.pdb
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\StartPage.g.cs
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\StartPage.baml
