@@ -1,7 +1,6 @@
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\bin\Debug\SurveyForSchool.exe.config
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\bin\Debug\SurveyForSchool.exe
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\bin\Debug\SurveyForSchool.pdb
-C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.AssemblyReference.cache
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\MainWindow.g.cs
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\App.g.cs
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool_MarkupCompile.cache
@@ -15,3 +14,8 @@ C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyFor
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.pdb
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\StartPage.g.cs
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\StartPage.baml
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\QuestionSelectionPage.g.cs
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\QuestionSelectionPage.baml
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\AdminPage.g.cs
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\AdminPage.baml
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.AssemblyReference.cache
