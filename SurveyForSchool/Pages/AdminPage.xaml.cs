@@ -28,7 +28,8 @@ namespace SurveyForSchool
         {
             InitializeComponent();
             ReadFile();
-            Loaded += MainWindow_Loaded;       
+            Loaded += MainWindow_Loaded;      
+            //проверка совместимости
         }
         /// <summary>
         /// создание папки для файлов и категории
