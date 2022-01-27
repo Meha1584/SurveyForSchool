@@ -84,6 +84,7 @@ namespace SurveyForSchool
             CheckCategories();
         }
 
+
         /// <summary>
         /// вывод всех категорий
         /// </summary>
