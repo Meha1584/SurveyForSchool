@@ -17,8 +17,7 @@
 mono_crash.*
 
 # Build results
-*.exe
-*.exe.config
+bin
 x64/
 x86/
 [Ww][Ii][Nn]32/
