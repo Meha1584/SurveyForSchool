@@ -26,7 +26,7 @@ namespace SurveyForSchool
             InitializeComponent();
             Loaded += MainWindow_Loaded;
             this.nameStudent = nameStudent;
-
+            ///lololololololo
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
