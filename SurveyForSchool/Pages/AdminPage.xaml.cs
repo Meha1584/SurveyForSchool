@@ -80,7 +80,7 @@ namespace SurveyForSchool
             
             List<string> categories = new List<string>();
             categories.Add("Все");
-            var dirInfos = Directory.GetDirectories(@"C:\Users\Fillaa\Desktop\TestWork").ToList();
+            var dirInfos = Directory.GetDirectories(@"C:\Users\pc\Desktop\TestWork").ToList();
             foreach (var item in dirInfos)
             {
                 string[] category = item.Split('\\');
