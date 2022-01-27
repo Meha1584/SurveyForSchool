@@ -55,16 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdminPage.xaml.cs">
+    <Compile Include="Pages\CreateCategoriesPage.xaml.cs">
+      <DependentUpon>CreateCategoriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="QuestionSelectionPage.xaml.cs">
+    <Compile Include="Pages\QuestionSelectionPage.xaml.cs">
       <DependentUpon>QuestionSelectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StartPage.xaml.cs">
+    <Compile Include="Pages\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="AdminPage.xaml">
+    <Page Include="Pages\CreateCategoriesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -80,11 +87,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="QuestionSelectionPage.xaml">
+    <Page Include="Pages\QuestionSelectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StartPage.xaml">
+    <Page Include="Pages\StartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,5 +122,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

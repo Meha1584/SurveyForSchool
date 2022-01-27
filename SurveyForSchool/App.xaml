@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:SurveyForSchool"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+ 
     </Application.Resources>
 </Application>
