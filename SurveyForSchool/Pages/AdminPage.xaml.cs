@@ -90,6 +90,7 @@ namespace SurveyForSchool
         public void CheckCategories()
         {
             List<string> categories = new List<string>();
+
             categories.Add("Все");
             var dirInfos = Directory.GetDirectories(line).ToList();
             foreach (var item in dirInfos)
