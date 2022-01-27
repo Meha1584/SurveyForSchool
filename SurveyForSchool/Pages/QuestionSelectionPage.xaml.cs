@@ -27,6 +27,7 @@ namespace SurveyForSchool
             Loaded += MainWindow_Loaded;
             this.nameStudent = nameStudent;
             nameStudentCheck.Content = nameStudent;
+
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
