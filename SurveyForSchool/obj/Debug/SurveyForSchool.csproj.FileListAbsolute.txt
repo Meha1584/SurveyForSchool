@@ -20,7 +20,6 @@ C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\Pages\Que
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\Pages\StartPage.baml
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\Pages\CreateCategoriesPage.g.cs
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\Pages\CreateCategoriesPage.baml
-C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.AssemblyReference.cache
 C:\Users\pc\Source\Repos\Meha1584\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csprojAssemblyReference.cache
 C:\Users\pc\Source\Repos\Meha1584\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.exe
 C:\Users\pc\Source\Repos\Meha1584\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.pdb
@@ -44,3 +43,4 @@ C:\Users\pc\Source\Repos\Meha1584\SurveyForSchool\SurveyForSchool\obj\Debug\Surv
 C:\Users\pc\Source\Repos\Meha1584\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.Properties.Resources.resources
 C:\Users\pc\Source\Repos\Meha1584\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.GenerateResource.cache
 C:\Users\pc\Source\Repos\Meha1584\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.CoreCompileInputs.cache
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.AssemblyReference.cache

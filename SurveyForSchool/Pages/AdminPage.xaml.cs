@@ -25,13 +25,24 @@ namespace SurveyForSchool
         string pathFolder;
         string line;
         List<string> categories;
+        List<Test> tests;
+        string pathCategoriesWithTest;
         public AdminPage()
         {
             InitializeComponent();
             ReadFile();
-            Loaded += MainWindow_Loaded;      
-            //проверка совместимости
+            Loaded += MainWindow_Loaded;
         }
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Width = 800;
+            Application.Current.MainWindow.Height = 450;
+            if (!(line == null))
+            {
+                StartOprions();
+            }
+        }
+
         /// <summary>
         /// создание папки для файлов и категории
         /// </summary>
@@ -74,19 +85,36 @@ namespace SurveyForSchool
             streamReader.Close();
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            Application.Current.MainWindow.Width = 800;
-            Application.Current.MainWindow.Height = 450;
-            if (!(line == null))
-            {
-                StartOprions();
-            }
-        }
 
         public void StartOprions()
         {
             CheckCategories();
+            CheckQuest();
+        }
+
+        /// <summary>
+        /// считывание всех тестов в список объектов и вывод всех тестов
+        /// </summary>
+        public void CheckQuest()
+        {
+            tests = new List<Test>();
+            int checkI = checkCategory.SelectedIndex;
+            if (checkCategory.SelectedIndex == 0)
+            {
+                pathCategoriesWithTest = line;
+            }
+            else
+            {
+                pathCategoriesWithTest = $@"{line}\{checkCategory.Items[checkI]}";
+            }
+            var fileInfo = Directory.GetFiles(pathCategoriesWithTest).ToList();
+            foreach (var item in fileInfo)
+            {
+                string[] file = item.Split('\\');
+                tests.Add(new Test(file.Last()));
+            }
+            data.ItemsSource = tests;
+            data.Items.Refresh();
         }
 
         /// <summary>
@@ -97,6 +125,7 @@ namespace SurveyForSchool
             categories = new List<string>();
             categories.Add("Все");
             var dirInfos = Directory.GetDirectories(line).ToList();
+            
             foreach (var item in dirInfos)
             {
                 string[] category = item.Split('\\');
@@ -163,6 +192,26 @@ namespace SurveyForSchool
                 }
                 return true;
             }
+        }
+
+        private void AddQuest(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveTest(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GoTest(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckIndexCategories(object sender, SelectionChangedEventArgs e)
+        {
+            CheckQuest();
         }
     }
 }
