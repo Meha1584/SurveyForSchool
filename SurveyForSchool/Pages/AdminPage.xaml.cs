@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace SurveyForSchool
 {
@@ -201,12 +202,23 @@ namespace SurveyForSchool
 
         private void RemoveTest(object sender, RoutedEventArgs e)
         {
-
+            Test test = data.SelectedItem as Test;
+            tests.Remove(test);
+            File.Delete(Path.Combine(line, test.NameTest));
+            for (int i = 1; i < categories.Count - 1; i++)
+            {
+                string pathDeleteFail = Path.Combine($@"{line}\{categories[i]}", test.NameTest);
+                if (File.Exists(pathDeleteFail))
+                {
+                    File.Delete(pathDeleteFail);
+                }
+            }
+            data.Items.Refresh();
         }
 
         private void GoTest(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AdminCheckQuestionPage());
         }
 
         private void CheckIndexCategories(object sender, SelectionChangedEventArgs e)

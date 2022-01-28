@@ -70,6 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\AdminCheckQuestionPage.xaml.cs">
+      <DependentUpon>AdminCheckQuestionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddTestPage.xaml.cs">
       <DependentUpon>AddTestPage.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Test.cs" />
+    <Page Include="Pages\AdminCheckQuestionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddTestPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
