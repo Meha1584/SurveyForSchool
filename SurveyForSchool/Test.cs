@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SurveyForSchool
 {
-    class Test
+    public class Test
     {
         string nameTest;
 

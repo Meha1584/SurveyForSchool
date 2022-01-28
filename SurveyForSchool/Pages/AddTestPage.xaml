@@ -1,0 +1,29 @@
+﻿<Page x:Class="SurveyForSchool.AddTestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SurveyForSchool"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddTestPage">
+
+    <Grid Background="White">
+        <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="200">
+                <Label Content="Введите путь до файла"/>
+                <TextBox Name="inputTest"/>
+                <Label Content="Введите имя файла"/>
+                <TextBox Name="inputFile"/>
+                <Button Content="Добавить" Click="AddFile" Margin="5" Width="100"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Выберите категорию"/>
+                <ComboBox Name="categoriesCheck"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom">
+                <Button Content="Выйти" Click="Exit"/>
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</Page>

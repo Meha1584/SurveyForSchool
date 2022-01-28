@@ -196,7 +196,7 @@ namespace SurveyForSchool
 
         private void AddQuest(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AddTestPage(categories, line));
         }
 
         private void RemoveTest(object sender, RoutedEventArgs e)

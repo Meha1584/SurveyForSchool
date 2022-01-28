@@ -44,3 +44,5 @@ C:\Users\pc\Source\Repos\Meha1584\SurveyForSchool\SurveyForSchool\obj\Debug\Surv
 C:\Users\pc\Source\Repos\Meha1584\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.GenerateResource.cache
 C:\Users\pc\Source\Repos\Meha1584\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.CoreCompileInputs.cache
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.AssemblyReference.cache
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\Pages\AddTestPage.g.cs
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\Pages\AddTestPage.baml
