@@ -213,5 +213,20 @@ namespace SurveyForSchool
         {
             CheckQuest();
         }
+
+        private void Filteration(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(inputNameFile.Text))
+            {
+                var filterTest = tests.Where(x => x.NameTest.Contains(inputNameFile.Text)).ToList();
+                data.ItemsSource = filterTest;
+                data.Items.Refresh();
+            }
+            else
+            {
+                data.ItemsSource = tests;
+                data.Items.Refresh();
+            }
+        }
     }
 }
