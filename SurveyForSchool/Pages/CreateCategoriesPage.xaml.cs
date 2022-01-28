@@ -21,11 +21,13 @@ namespace SurveyForSchool
     /// </summary>
     public partial class CreateCategoriesPage : Page
     {
-        public CreateCategoriesPage()
+        string line;
+        public CreateCategoriesPage(string line)
         {
             InitializeComponent();
             Application.Current.MainWindow.Width = 270;
             Application.Current.MainWindow.Height = 300;
+            this.line = line;
         }
 
         private void Exit(object sender, RoutedEventArgs e)
@@ -35,9 +37,17 @@ namespace SurveyForSchool
 
         private void Add(object sender, RoutedEventArgs e)
         {
-            if (true)
+            string nameCategories = inputCategories.Text;
+            string pathCategories = $@"{line}\{nameCategories}";
+            if (!Directory.Exists(pathCategories))
             {
-
+                Directory.CreateDirectory(pathCategories);
+                MessageBox.Show("Категория создана");
+                NavigationService.GoBack();
+            }
+            else
+            {
+                MessageBox.Show("Такая категория уже есть");
             }
         }
     }

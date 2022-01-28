@@ -24,6 +24,7 @@ namespace SurveyForSchool
         string pathFile;
         string pathFolder;
         string line;
+        List<string> categories;
         public AdminPage()
         {
             InitializeComponent();
@@ -77,6 +78,10 @@ namespace SurveyForSchool
         {
             Application.Current.MainWindow.Width = 800;
             Application.Current.MainWindow.Height = 450;
+            if (!(line == null))
+            {
+                StartOprions();
+            }
         }
 
         public void StartOprions()
@@ -89,7 +94,7 @@ namespace SurveyForSchool
         /// </summary>
         public void CheckCategories()
         {
-            List<string> categories = new List<string>();
+            categories = new List<string>();
             categories.Add("Все");
             var dirInfos = Directory.GetDirectories(line).ToList();
             foreach (var item in dirInfos)
@@ -104,12 +109,12 @@ namespace SurveyForSchool
 
         private void Exit(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CreateCategoriesPage());
+            NavigationService.Navigate(new StartPage());
         }
 
         private void AddCategories(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CreateCategoriesPage());
+            NavigationService.Navigate(new CreateCategoriesPage(line));
         }
 
         /// <summary>
@@ -137,6 +142,12 @@ namespace SurveyForSchool
             }
         }
 
+        /// <summary>
+        /// проверка на существование папки, чтобы добавить в неё новую папку
+        /// </summary>
+        /// <param name="pathToFolder">путь папки</param>
+        /// <param name="nameFolder">название создаваемой папки</param>
+        /// <returns></returns>
         public bool CheckPath(string pathToFolder, string nameFolder)
         {
             
