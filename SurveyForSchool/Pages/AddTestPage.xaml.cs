@@ -61,7 +61,7 @@ namespace SurveyForSchool
                 string pathCopyFile = Path.Combine(pathToFolder, pathFile);
                 if (File.Exists(finishPathFile))
                 {
-                    File.Copy(finishPathFile, pathCopyFile);
+                    File.Copy(finishPathFile, pathCopyFile, true);
                     File.Copy(finishPathFile, Path.Combine(line, pathFile), true);
                     MessageBox.Show("Файл добавлен");
                 }

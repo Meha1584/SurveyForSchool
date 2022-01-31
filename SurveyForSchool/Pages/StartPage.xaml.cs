@@ -66,7 +66,7 @@ namespace SurveyForSchool
             }
             else
             {
-                MessageBox.Show("Пароль неправильный");
+                MessageBox.Show("Пароль неправильный", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
