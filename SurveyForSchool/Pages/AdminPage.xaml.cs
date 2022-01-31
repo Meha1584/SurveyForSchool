@@ -226,7 +226,7 @@ namespace SurveyForSchool
             CheckQuest();
         }
 
-        private void Filteration(object sender, KeyEventArgs e)
+        private void Filteration(object sender, TextChangedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(inputNameFile.Text))
             {
@@ -240,5 +240,6 @@ namespace SurveyForSchool
                 data.Items.Refresh();
             }
         }
+
     }
 }

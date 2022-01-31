@@ -25,6 +25,5 @@ namespace SurveyForSchool
             InitializeComponent();
             navigateFrame.Navigate(new AdminPage());
         }
-        
     }
 }

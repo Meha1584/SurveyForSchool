@@ -88,6 +88,7 @@
     <Compile Include="Pages\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="QuestionsClass.cs" />
     <Compile Include="Test.cs" />
     <Page Include="Pages\AdminCheckQuestionPage.xaml">
       <SubType>Designer</SubType>
