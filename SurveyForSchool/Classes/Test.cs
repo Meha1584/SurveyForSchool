@@ -14,7 +14,7 @@ namespace SurveyForSchool
         public Test(string nameTest)
         {
             NameTest = nameTest;
-            Images = @"..\images\1.jpg";
+            Images = @"../Images/1.jpg";
         }
 
         public string NameTest { get => nameTest; set => nameTest = value; }

@@ -101,5 +101,10 @@ namespace SurveyForSchool
                 checkQuestionList.Items.Refresh();
             }
         }
+
+        private void S(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }

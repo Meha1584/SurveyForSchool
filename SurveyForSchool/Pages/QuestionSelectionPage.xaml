@@ -22,7 +22,7 @@
         <StackPanel Grid.ColumnSpan="2">
             <Label Content="Добро пожаловать в программу для тестирования" FontSize="30" FontWeight="Bold"/>
         </StackPanel>
-        <ListView Grid.Row="1" Grid.RowSpan="3" Name="checkQuestionList" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListView Grid.Row="1" Grid.RowSpan="3" Name="checkQuestionList" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="S">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Width="150" Height="150">
@@ -30,7 +30,7 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Image Grid.RowSpan="2" Source="C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\Images\4.jpg"/>
+                        <Image Grid.RowSpan="2" Source="/Pages/4.jpg"/>
                         <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
                             <TextBlock Text="{Binding NameTest}"/>
                         </StackPanel>
