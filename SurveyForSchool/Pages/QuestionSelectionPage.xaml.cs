@@ -87,6 +87,7 @@ namespace SurveyForSchool
             CheckQuestions();
         }
 
+
         private void Filteration(object sender, TextChangedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(inputNameFile.Text))
