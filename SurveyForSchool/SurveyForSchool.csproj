@@ -52,6 +52,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,6 +71,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\CheckQuestionsClass.cs" />
+    <Compile Include="Classes\CheckCategoriesClass.cs" />
     <Compile Include="Pages\AdminCheckQuestionPage.xaml.cs">
       <DependentUpon>AdminCheckQuestionPage.xaml</DependentUpon>
     </Compile>
@@ -88,8 +91,8 @@
     <Compile Include="Pages\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="QuestionsClass.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="Classes\QuestionsClass.cs" />
+    <Compile Include="Classes\Test.cs" />
     <Page Include="Pages\AdminCheckQuestionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

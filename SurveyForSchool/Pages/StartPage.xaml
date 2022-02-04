@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:SurveyForSchool"
       mc:Ignorable="d"
       Title="StartPage" Width="368" Height="198">
-    
+
     <Grid Background="White">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Label Content="Введите ваше имя"/>

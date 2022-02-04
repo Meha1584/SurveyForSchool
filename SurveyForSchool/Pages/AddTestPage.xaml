@@ -9,21 +9,32 @@
       Title="AddTestPage">
 
     <Grid Background="White">
-        <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="200">
-                <Label Content="Введите путь до файла"/>
-                <TextBox Name="inputTest"/>
-                <Label Content="Введите имя файла"/>
-                <TextBox Name="inputFile"/>
-                <Button Content="Добавить" Click="AddFile" Margin="5" Width="100"/>
-            </StackPanel>
-            <StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Height="150" Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Left">
                 <Label Content="Выберите категорию"/>
                 <ComboBox Name="categoriesCheck"/>
             </StackPanel>
-            <StackPanel VerticalAlignment="Bottom">
-                <Button Content="Выйти" Click="Exit"/>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Right" >
+                <Button Content="Загрузить файл" Click="AddFile" Width="100" Height="20"/>
             </StackPanel>
-        </WrapPanel>
+            </Grid>
+
+        <StackPanel Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Выйти" Click="Exit" />
+        </StackPanel>
     </Grid>
 </Page>

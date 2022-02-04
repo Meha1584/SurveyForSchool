@@ -9,9 +9,7 @@
       Title="AdminPage">
     <Grid Background="White">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Name="stackPanelCheck">
-            <Label Content="Введите путь до папки, в которой будут храниться категори и файлы"/>
-            <TextBox Name="inputPathFolder"/>
-            <Label Content="Введите название папки"/>
+            <Label Content="Введите название папки, в которой будут храниться категори и тесты"/>
             <TextBox Name="inputNameFolder"/>
             <Button Content="Ввести" Click="WriteFile"/>
         </StackPanel>

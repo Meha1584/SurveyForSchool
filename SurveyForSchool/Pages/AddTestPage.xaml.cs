@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -53,27 +54,20 @@ namespace SurveyForSchool
         private void AddFile(object sender, RoutedEventArgs e)
         {
             CheckCategories();
-            string pathFolder = inputTest.Text;
-            string pathFile = inputFile.Text;
-            if (Directory.Exists(pathFolder))
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "C:\\";
+            openFileDialog.Filter = "txt files (*.txt)|*.txt";
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == true)
             {
-                string finishPathFile = Path.Combine(pathFolder, pathFile);
-                string pathCopyFile = Path.Combine(pathToFolder, pathFile);
-                if (File.Exists(finishPathFile))
-                {
-                    File.Copy(finishPathFile, pathCopyFile, true);
-                    File.Copy(finishPathFile, Path.Combine(line, pathFile), true);
-                    MessageBox.Show("Файл добавлен");
-                }
-                else
-                {
-                    MessageBox.Show("Такого файла не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                string filePath = openFileDialog.FileName;
+                string[] arrayLine = filePath.Split('\\');
+                string fileName = arrayLine.Last();
+                File.Copy(filePath, Path.Combine(pathToFolder, fileName), true);
+                File.Copy(filePath, Path.Combine(line, fileName), true);
             }
-            else
-            {
-                MessageBox.Show("Такого каталога не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            
         }
 
         private void Exit(object sender, RoutedEventArgs e)
