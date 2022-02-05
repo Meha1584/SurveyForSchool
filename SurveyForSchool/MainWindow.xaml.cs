@@ -24,7 +24,7 @@ namespace SurveyForSchool
         {
             InitializeComponent();
             //navigateFrame.Navigate(new AdminPage());
-            navigateFrame.Navigate(new QuestionSelectionPage("gg"));
+            navigateFrame.Navigate(new StartPage());
         }
     }
 }
