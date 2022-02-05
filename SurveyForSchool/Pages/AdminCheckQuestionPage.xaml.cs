@@ -22,7 +22,7 @@ namespace SurveyForSchool
     public partial class AdminCheckQuestionPage : Page
     {
         List<QuestionsClass> questions;
-        public AdminCheckQuestionPage()
+        public AdminCheckQuestionPage(List<QuestionsClass> questions, string nameTest, string pathFolder)
         {
             InitializeComponent();
             questions = new List<QuestionsClass>();
@@ -36,35 +36,10 @@ namespace SurveyForSchool
             Application.Current.MainWindow.Height = 450;
             AddQuestion();
         }
+        string pathFolder;
         public void AddQuestion()
         {
-            StreamReader streamReader = new StreamReader(@"C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\bin\Debug\d\1.txt");
-            string line;
-            List<string> listElement = new List<string>();
-            var list = new List<List<string>>();
-            while ((line = streamReader.ReadLine()) != null)
-            {
-                listElement.Add(line);
-            }
-            for (int i = 0; i < listElement.Count; i += 6)
-            {
-                list.Add(listElement.GetRange(i, Math.Min(6, listElement.Count - i)));
-            }
-            for (int i = 0; i < list.Count; i++)
-            {
-                
-                questions.Add(new QuestionsClass()
-                {
-                    TitleQuestion = list[i][0],
-                    PathImage = list[i][1],
-                    OtvetTrue = list[i][2],
-                    Otvet1 = list[i][3],
-                    Otvet2 = list[i][4],
-                    Otvet3 = list[i][5],
-                });
-                
-            }
-            streamReader.Close();
+           
             listQuestion.ItemsSource = questions;
         }
     }

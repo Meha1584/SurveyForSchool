@@ -59,11 +59,13 @@ namespace SurveyForSchool
         /// <summary>
         /// считывание всех тестов в список объектов и вывод всех тестов
         /// </summary>
+        /// 
+        string checkCategories;
         public void CheckQuest()
         {
             CheckQuestionsClass checkQuestionsClass = new CheckQuestionsClass();
             int checkI = checkCategory.SelectedIndex;
-            string checkCategories = (string)checkCategory.Items[checkI];
+            checkCategories = (string)checkCategory.Items[checkI];
             tests = checkQuestionsClass.LoadingQuestions(checkI, line, checkCategories);
             data.ItemsSource = tests;
             data.Items.Refresh();
@@ -132,12 +134,63 @@ namespace SurveyForSchool
 
         private void GoTest(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AdminCheckQuestionPage());
+            Test test = data.SelectedItem as Test;
+            List<QuestionsClass> questions = ReadFileQuestions(test);
+            NavigationService.Navigate(new AdminCheckQuestionPage(questions, test.NameTest, pathFolder));
         }
 
         private void CheckIndexCategories(object sender, SelectionChangedEventArgs e)
         {
             CheckQuest();
+        }
+        string pathFolder;
+        private List<QuestionsClass> ReadFileQuestions(Test test)
+        {
+            pathFolder = Path.Combine(Path.Combine(line, checkCategories), test.NameTest);
+            string pathFile = "";
+            string[] pathFiles = Directory.GetFiles(pathFolder);
+            foreach (var item in pathFiles)
+            {
+                if (item.Split('.').Last().Equals("txt"))
+                {
+                    pathFile = item;
+                }
+            }
+            List<QuestionsClass> questions = new List<QuestionsClass>();
+            try
+            {
+                StreamReader reader = new StreamReader(pathFile);
+
+                string str = "";
+                List<string> listElement = new List<string>();
+                var list = new List<List<string>>();
+                while ((str = reader.ReadLine()) != null)
+                {
+                    listElement.Add(str);
+                }
+                for (int i = 0; i < listElement.Count; i += 7)
+                {
+                    list.Add(listElement.GetRange(i, Math.Min(7, listElement.Count - i)));
+                }
+                for (int i = 0; i < list.Count; i++)
+                {
+
+                    questions.Add(new QuestionsClass()
+                    {
+                        TitleQuestion = list[i][0],
+                        PathImage = list[i][1],
+                        OtvetTrue = list[i][2],
+                        Otvet1 = list[i][3],
+                        Otvet2 = list[i][4],
+                        Otvet3 = list[i][5],
+                    });
+
+                }
+                reader.Close();
+            }
+            catch
+            { }
+            return questions;
         }
 
         private void Filteration(object sender, TextChangedEventArgs e)
