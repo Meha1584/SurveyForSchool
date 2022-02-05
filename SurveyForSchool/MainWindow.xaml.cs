@@ -23,6 +23,7 @@ namespace SurveyForSchool
         public MainWindow()
         {
             InitializeComponent();
+            //navigateFrame.Navigate(new AdminPage());
             navigateFrame.Navigate(new QuestionSelectionPage("gg"));
         }
     }

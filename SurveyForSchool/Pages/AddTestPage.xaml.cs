@@ -42,30 +42,41 @@ namespace SurveyForSchool
 
         public void CheckCategories()
         {
-            if (categoriesCheck.SelectedIndex == 0)
-            {
-                pathToFolder = line;
-            }
-            else
-            {
-                pathToFolder = $@"{line}\{categoriesCheck.Text}";
-            }
+            pathToFolder = $@"{line}\{categoriesCheck.Text}";
         }
         private void AddFile(object sender, RoutedEventArgs e)
         {
             CheckCategories();
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = "C:\\";
-            openFileDialog.Filter = "txt files (*.txt)|*.txt";
-            openFileDialog.RestoreDirectory = true;
-
-            if (openFileDialog.ShowDialog() == true)
+            string nameTest = inputNameTest.Text.Replace(" ", "");
+            string path = Path.Combine(pathToFolder, nameTest);
+            if (nameTest.Length == 0)
             {
-                string filePath = openFileDialog.FileName;
-                string[] arrayLine = filePath.Split('\\');
-                string fileName = arrayLine.Last();
-                File.Copy(filePath, Path.Combine(pathToFolder, fileName), true);
-                File.Copy(filePath, Path.Combine(line, fileName), true);
+                MessageBox.Show("Не ввели название теста");
+            }
+            else
+            {
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = "C:\\";
+                //openFileDialog.Filter = "filex txt |*.txt";
+                openFileDialog.RestoreDirectory = true;
+                openFileDialog.Multiselect = true;
+
+                if (openFileDialog.ShowDialog() == true)
+                {
+                    string[] filePath = openFileDialog.FileNames;
+                    foreach (var item in filePath)
+                    {
+                        string[] arrayLine = item.Split('\\');
+                        string fileName = arrayLine.Last();
+                        File.Copy(item, Path.Combine(path, fileName), true);
+                    }
+                    MessageBox.Show("Тест создан");
+                    NavigationService.GoBack();
+                }
             }
             
         }

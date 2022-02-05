@@ -12,7 +12,6 @@ namespace SurveyForSchool
         public List<string> LoadingCategories(string line)
         {
             List<string> categories = new List<string>();
-            categories.Add("Все");
             List<string> dirInfos = Directory.GetDirectories(line).ToList();
 
             foreach (var item in dirInfos)

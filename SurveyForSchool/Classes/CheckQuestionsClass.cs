@@ -12,16 +12,9 @@ namespace SurveyForSchool
         public List<Test> LoadingQuestions(int checkI, string line, string checkCategories)
         {
             List<Test> tests = new List<Test>();
-            string pathCategoriesWithTest;
-            if (checkI == 0)
-            {
-                pathCategoriesWithTest = line;
-            }
-            else
-            {
-                pathCategoriesWithTest = $@"{line}\{checkCategories}";
-            }
-            var fileInfo = Directory.GetFiles(pathCategoriesWithTest).ToList();
+            string pathCategoriesWithTest = $@"{line}\{checkCategories}";
+            
+            var fileInfo = Directory.GetDirectories(pathCategoriesWithTest).ToList();
             foreach (var item in fileInfo)
             {
                 string[] file = item.Split('\\');

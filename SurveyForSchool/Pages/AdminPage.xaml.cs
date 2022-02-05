@@ -20,75 +20,35 @@ using WPF = System.Windows;
 
 namespace SurveyForSchool
 {
+  
     /// <summary>
     /// Логика взаимодействия для AdminPage.xaml
     /// </summary>
     public partial class AdminPage : Page
     {
-        string pathFile;
-        string pathFolder;
-        string line;
+        string line = Path.Combine(Directory.GetCurrentDirectory(), "QuestionsFolder");
         List<string> categories;
         List<Test> tests;
         
         public AdminPage()
         {
             InitializeComponent();
-            ReadFile();
             Loaded += MainWindow_Loaded;
         }
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             WPF.Application.Current.MainWindow.Width = 800;
             WPF.Application.Current.MainWindow.Height = 450;
-            if (!(line == null))
-            {
-                StartOprions();
-            }
+
+            StartOprions();
+
         }
 
-        /// <summary>
-        /// создание папки для файлов и категории
-        /// </summary>
-        public void CreateFolder()
-        {
-            if (!Directory.Exists(pathFolder))
-            {
-                Directory.CreateDirectory(pathFolder);
-            }
-            
-        }
 
         /// <summary>
         /// функция для создание файла, в котором хранится путь до основой папки с тестами
         /// а также, если этой папки еще нет, то переключение интерфейса на ввод папки
         /// </summary>
-        public void ReadFile()
-        {
-            string getDirectory = Directory.GetCurrentDirectory();
-            pathFile = $@"{getDirectory}\StringFolder.txt";
-
-            if (!File.Exists(pathFile))
-            {
-                FileStream file = new FileStream(pathFile, FileMode.Create);
-                file.Close();
-            }
-            
-            StreamReader streamReader = new StreamReader(pathFile);
-            line = streamReader.ReadLine();
-            if (line == null)
-            {
-                grid.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                grid.Visibility = Visibility.Visible;
-                stackPanelCheck.Visibility = Visibility.Hidden;
-                StartOprions();
-            }
-            streamReader.Close();
-        }
-
 
         public void StartOprions()
         {
@@ -128,35 +88,6 @@ namespace SurveyForSchool
         private void AddCategories(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new CreateCategoriesPage(line));
-        }
-
-        /// <summary>
-        /// запись пути папки в файл
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void WriteFile(object sender, RoutedEventArgs e)
-        {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            if (fbd.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
-            {
-                string nameFolder = inputNameFolder.Text;
-                string pathToFolder = fbd.SelectedPath;
-                bool check = CheckPath(nameFolder);
-                if (check)
-                {
-                    pathFolder = $@"{pathToFolder}\{nameFolder}\";
-                    StreamWriter streamWriter = new StreamWriter(pathFile);
-                    streamWriter.Write(pathFolder);
-                    streamWriter.Close();
-                    CreateFolder();
-                    ReadFile();
-                }
-                else
-                {
-                    WPF.MessageBox.Show("Вы не ввели имя папки", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
         }
 
         /// <summary>
