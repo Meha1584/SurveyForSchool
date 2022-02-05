@@ -24,6 +24,10 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Right">
+                <Label Content="Введите название теста"/>
+                <TextBox Name="inputNameTest"/>
+            </StackPanel>
             <StackPanel HorizontalAlignment="Left">
                 <Label Content="Выберите категорию"/>
                 <ComboBox Name="categoriesCheck"/>

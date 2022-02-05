@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SurveyForSchool
 {
-    class QuestionsClass
+    public class QuestionsClass
     {
         string titleQuestion;
         string pathImage;

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace SurveyForSchool
 {
@@ -24,6 +25,7 @@ namespace SurveyForSchool
         string nameStudent;
         string line;
         List<Test> tests;
+        string chosenCategory;
         public QuestionSelectionPage(string nameStudent)
         {
             InitializeComponent();
@@ -50,17 +52,13 @@ namespace SurveyForSchool
         public void ReadFile()
         {
             string getDirectory = Directory.GetCurrentDirectory();
-            string pathFile = $@"{getDirectory}\StringFolder.txt";
-
-            StreamReader streamReader = new StreamReader(pathFile);
-            line = streamReader.ReadLine();
-            streamReader.Close();
+            line = $@"{getDirectory}\QuestionsFolder";
         }
         public void CheckQuestions()
         {
             CheckQuestionsClass checkQuestionsClass = new CheckQuestionsClass();
             int checkI = checkCategory.SelectedIndex;
-            string chosenCategory = (string)checkCategory.Items[checkI];
+            chosenCategory = (string)checkCategory.Items[checkI];
             tests = checkQuestionsClass.LoadingQuestions(checkI, line, chosenCategory);
             checkQuestionList.ItemsSource = tests;
         }
@@ -99,6 +97,68 @@ namespace SurveyForSchool
             {
                 checkQuestionList.ItemsSource = tests;
                 checkQuestionList.Items.Refresh();
+            }
+        }
+        string pathFolder;
+        private List<QuestionsClass> ReadFileQuestions(Test test)
+        {
+            pathFolder = Path.Combine(Path.Combine(line, chosenCategory), test.NameTest);
+            string pathFile="";
+            string[] pathFiles = Directory.GetFiles(pathFolder);
+            foreach (var item in pathFiles)
+            {
+                if (item.Split('.').Last().Equals("txt"))
+                {
+                    pathFile = item;
+                }
+            }
+            List<QuestionsClass> questions = new List<QuestionsClass>();
+            try
+            {
+                StreamReader reader = new StreamReader(pathFile);
+                
+                string str = "";                
+                List<string> listElement = new List<string>();
+                var list = new List<List<string>>();
+                while ((str = reader.ReadLine()) != null)
+                {
+                    listElement.Add(str);
+                }
+                for (int i = 0; i < listElement.Count; i += 7)
+                {
+                    list.Add(listElement.GetRange(i, Math.Min(7, listElement.Count - i)));
+                }
+                for (int i = 0; i < list.Count; i++)
+                {
+
+                    questions.Add(new QuestionsClass()
+                    {
+                        TitleQuestion = list[i][0],
+                        PathImage = list[i][1],
+                        OtvetTrue = list[i][2],
+                        Otvet1 = list[i][3],
+                        Otvet2 = list[i][4],
+                        Otvet3 = list[i][5],
+                    });
+
+                }
+                reader.Close();
+            }
+            catch
+            { }
+            return questions;
+        }
+
+        private void StartTestClick(object sender, MouseButtonEventArgs e)
+        {
+
+            MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите начать тестирование?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                
+                Test test = (sender as Grid).DataContext as Test;
+                List<QuestionsClass> questions = ReadFileQuestions(test);
+                NavigationService.Navigate(new Pages.TestingPage(questions, test.NameTest, Convert.ToInt32(inputCountQuestion.Text), pathFolder));
             }
         }
     }

@@ -11,7 +11,7 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Name="stackPanelCheck">
             <Label Content="Введите название папки, в которой будут храниться категори и тесты"/>
             <TextBox Name="inputNameFolder"/>
-            <Button Content="Ввести" Click="WriteFile"/>
+            <Button Content="Ввести"/>
         </StackPanel>
         <Grid Background="White" Name="grid">
 
