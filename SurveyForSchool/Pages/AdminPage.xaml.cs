@@ -52,6 +52,14 @@ namespace SurveyForSchool
 
         public void StartOprions()
         {
+            if (!Directory.Exists(line))
+            {
+                Directory.CreateDirectory(line);
+                if (!Directory.Exists(Path.Combine(line, "Информатика")))
+                {
+                    Directory.CreateDirectory(Path.Combine(line, "Информатика"));
+                }
+            }
             CheckCategories();
             CheckQuest();
         }

@@ -70,11 +70,6 @@ namespace SurveyForSchool
             checkCategory.SelectedItem = categories[0];
         }
 
-        private void GoTest(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Exit(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
