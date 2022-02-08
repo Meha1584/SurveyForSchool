@@ -7,8 +7,6 @@ C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyFor
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool_MarkupCompile.lref
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\MainWindow.baml
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.g.resources
-C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.Properties.Resources.resources
-C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.GenerateResource.cache
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.csproj.CoreCompileInputs.cache
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.exe
 C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.pdb
@@ -75,3 +73,6 @@ C:\Users\Katerina\Source\Repos\SurveyForSchool\SurveyForSchool\obj\Debug\Pages\T
 C:\Users\Katerina\Source\Repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.g.resources
 C:\Users\Katerina\Source\Repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.exe
 C:\Users\Katerina\Source\Repos\SurveyForSchool\SurveyForSchool\obj\Debug\SurveyForSchool.pdb
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\Pages\TestingPage.g.cs
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\App.baml
+C:\Users\Fillaa\source\repos\SurveyForSchool\SurveyForSchool\obj\Debug\Pages\TestingPage.baml

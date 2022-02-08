@@ -9,17 +9,13 @@ namespace SurveyForSchool
     public class Test
     {
         string nameTest;
-        string images;
 
         public Test(string nameTest)
         {
             NameTest = nameTest;
-            Images = @"..\images\1.jpg";
         }
 
         public string NameTest { get => nameTest; set => nameTest = value; }
-        public string Images { get => images; set => images = value; }
-
         
     }
 }

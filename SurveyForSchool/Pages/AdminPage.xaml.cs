@@ -120,16 +120,16 @@ namespace SurveyForSchool
         {
             Test test = data.SelectedItem as Test;
             tests.Remove(test);
-            File.Delete(Path.Combine(line, test.NameTest));
-            for (int i = 1; i < categories.Count - 1; i++)
+            for (int i = 0; i < categories.Count; i++)
             {
                 string pathDeleteFail = Path.Combine($@"{line}\{categories[i]}", test.NameTest);
-                if (File.Exists(pathDeleteFail))
+                if (Directory.Exists(pathDeleteFail))
                 {
-                    File.Delete(pathDeleteFail);
+                    Directory.Delete(pathDeleteFail);
                 }
             }
             data.Items.Refresh();
+            WPF.MessageBox.Show("Тест удален");
         }
 
         private void GoTest(object sender, RoutedEventArgs e)
