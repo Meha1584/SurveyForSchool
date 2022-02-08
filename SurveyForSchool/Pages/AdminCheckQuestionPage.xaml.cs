@@ -25,8 +25,10 @@ namespace SurveyForSchool
         public AdminCheckQuestionPage(List<QuestionsClass> questions, string nameTest, string pathFolder)
         {
             InitializeComponent();
-            questions = new List<QuestionsClass>();
+            this.questions = questions;
+            listQuestion.ItemsSource = questions;
             Loaded += MainWindow_Loaded;
+            
             //otvet1.SetValue(Grid.RowProperty, 0);
             //otvet1.SetValue(Grid.ColumnProperty, 0);
         }
@@ -34,13 +36,12 @@ namespace SurveyForSchool
         {
             Application.Current.MainWindow.Width = 800;
             Application.Current.MainWindow.Height = 450;
-            AddQuestion();
         }
-        string pathFolder;
-        public void AddQuestion()
+
+        private void Exit(object sender, RoutedEventArgs e)
         {
-           
-            listQuestion.ItemsSource = questions;
+            NavigationService.GoBack();
+
         }
     }
 }

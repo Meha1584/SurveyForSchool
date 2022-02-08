@@ -9,10 +9,11 @@
       Title="AdminCheckQuestionPage">
 
     <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
         <ListView Name="listQuestion" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -21,22 +22,21 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Image Source="{Binding PathImage}"/>
                         <Label Content="{Binding TitleQuestion}"/>
                         <Grid Height="75" Name="grid" Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <RadioButton Name="otvet1" Content="{Binding Otvet1}"/>
-                                <RadioButton Name="otvet2" Content="{Binding Otvet2}" Grid.Column="1"/>
-                                <RadioButton Name="otvet3" Content="{Binding Otvet3}" Grid.Row="1"/>
-                                <RadioButton Name="otvetTrue" Content="{Binding OtvetTrue}" Grid.Column="1" Grid.Row="1"/>
-                            </Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <RadioButton Name="otvet1" Content="{Binding Otvet1}"/>
+                            <RadioButton Name="otvet2" Content="{Binding Otvet2}" Grid.Column="1"/>
+                            <RadioButton Name="otvet3" Content="{Binding Otvet3}" Grid.Row="1"/>
+                            <RadioButton Name="otvetTrue" Content="{Binding OtvetTrue}" Grid.Column="1" Grid.Row="1"/>
+                        </Grid>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -46,5 +46,8 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
         </ListView>
+        <StackPanel Grid.Column="1" VerticalAlignment="Bottom">
+            <Button Content="Выйти" Click="Exit" Width="40"/>
+        </StackPanel>
     </Grid>
 </Page>

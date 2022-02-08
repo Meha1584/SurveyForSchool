@@ -52,6 +52,14 @@ namespace SurveyForSchool
 
         public void StartOprions()
         {
+            if (!Directory.Exists(line))
+            {
+                Directory.CreateDirectory(line);
+                if (!Directory.Exists(Path.Combine(line, "Информатика")))
+                {
+                    Directory.CreateDirectory(Path.Combine(line, "Информатика"));
+                }
+            }
             CheckCategories();
             CheckQuest();
         }
@@ -120,23 +128,23 @@ namespace SurveyForSchool
         {
             Test test = data.SelectedItem as Test;
             tests.Remove(test);
-            File.Delete(Path.Combine(line, test.NameTest));
-            for (int i = 1; i < categories.Count - 1; i++)
+            for (int i = 0; i < categories.Count; i++)
             {
                 string pathDeleteFail = Path.Combine($@"{line}\{categories[i]}", test.NameTest);
-                if (File.Exists(pathDeleteFail))
+                if (Directory.Exists(pathDeleteFail))
                 {
-                    File.Delete(pathDeleteFail);
+                    Directory.Delete(pathDeleteFail);
                 }
             }
             data.Items.Refresh();
+            WPF.MessageBox.Show("Тест удален");
         }
 
         private void GoTest(object sender, RoutedEventArgs e)
         {
             Test test = data.SelectedItem as Test;
             List<QuestionsClass> questions = ReadFileQuestions(test);
-            NavigationService.Navigate(new AdminCheckQuestionPage(questions, test.NameTest, pathFolder));
+            NavigationService.Navigate(new Pages.TestingPage(questions, test.NameTest, pathFolder, questions.Count - 1));
         }
 
         private void CheckIndexCategories(object sender, SelectionChangedEventArgs e)
