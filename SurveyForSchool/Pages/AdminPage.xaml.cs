@@ -144,7 +144,7 @@ namespace SurveyForSchool
         {
             Test test = data.SelectedItem as Test;
             List<QuestionsClass> questions = ReadFileQuestions(test);
-            NavigationService.Navigate(new AdminCheckQuestionPage(questions, test.NameTest, pathFolder));
+            NavigationService.Navigate(new Pages.TestingPage(questions, test.NameTest, pathFolder, questions.Count - 1));
         }
 
         private void CheckIndexCategories(object sender, SelectionChangedEventArgs e)

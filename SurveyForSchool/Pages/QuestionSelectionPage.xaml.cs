@@ -153,7 +153,7 @@ namespace SurveyForSchool
                 
                 Test test = (sender as Grid).DataContext as Test;
                 List<QuestionsClass> questions = ReadFileQuestions(test);
-                NavigationService.Navigate(new Pages.TestingPage(questions, test.NameTest, Convert.ToInt32(inputCountQuestion.Text), pathFolder));
+                NavigationService.Navigate(new Pages.TestingPage(questions, test.NameTest, pathFolder, Convert.ToInt32(inputCountQuestion.Text)));
             }
         }
     }

@@ -47,5 +47,8 @@
             </RadioButton>
         </StackPanel>
         <Button x:Name="nextQuestion" Content="Далее" Grid.Row="3" Grid.Column="1" Width="200" Height="35" FontSize="14" FontFamily="Times New Roman" Click="NextQuestionClick"/>
+        <StackPanel Grid.Row="3" VerticalAlignment="Bottom">
+            <Button Content="Выйти" Click="Exit"/>
+        </StackPanel>
     </Grid>
 </Page>

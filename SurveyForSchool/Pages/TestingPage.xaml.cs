@@ -26,7 +26,7 @@ namespace SurveyForSchool.Pages
         int currentQuestion = 0;
         string folder;
         int countQuestions;
-        public TestingPage(List <QuestionsClass> questions, string nameTest, int countQuestions, string pathFolder)
+        public TestingPage(List <QuestionsClass> questions, string nameTest, string pathFolder, int countQuestions = 0)
         {
             InitializeComponent();
             folder = pathFolder;
@@ -143,6 +143,11 @@ namespace SurveyForSchool.Pages
                 ShowQuestions();
             }
 
+        }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

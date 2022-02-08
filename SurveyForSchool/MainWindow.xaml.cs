@@ -23,8 +23,8 @@ namespace SurveyForSchool
         public MainWindow()
         {
             InitializeComponent();
-            navigateFrame.Navigate(new AdminPage());
-            //navigateFrame.Navigate(new StartPage());
+            //navigateFrame.Navigate(new AdminPage());
+            navigateFrame.Navigate(new StartPage());
         }
     }
 }
